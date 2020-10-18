@@ -16,8 +16,9 @@ export default class HtmlService {
     }
 
     async addReport(type, level, date) {
-        const report = { type, level, date };
+        const report = { type, level, date};
         const reportId = await this.todoService.save(report);
+        console.log(reportId);
         report.id = reportId;
         this.addToHtmlList(report);
     }
